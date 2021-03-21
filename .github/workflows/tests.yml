@@ -1,4 +1,4 @@
-name: Unit Tests
+name: API Unit Tests
 on:
   pull_request:
   push:
@@ -23,4 +23,4 @@ jobs:
         yarn install
     - name: Unit tests
       run: |
-        yarn test
+        yarn workspaces api test
