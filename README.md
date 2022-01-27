@@ -17,6 +17,28 @@ Mono repo containing 3 packages:
 yarn
 ```
 
+#### Mac M1 processors
+
+Install chromium
+```
+brew install chromium
+
+# test opening. You might have to allow it in security settings
+chromium
+
+# If you receive "Chromium is damaged"
+xattr -cr /Applications/Chromium.app
+```
+
+Set puppeteer settings to use brew chromium in `.bash_profile`
+
+```
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+```
+
+
+
 #### Infrastructure
 The infrastructure is set up initially using terraform.
 
